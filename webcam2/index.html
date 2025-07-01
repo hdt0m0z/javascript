@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Control & Specs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Webcam Control & Specs</h1>
+        <p class="text-gray-600 mb-6">Click "Start Webcam" to activate your camera feed. Remember to grant permission if prompted.</p>
+
+        <div class="button-group">
+            <button id="startButton" class="start-button">Start Webcam</button>
+            <button id="stopButton" class="stop-button" disabled>Stop Webcam</button>
+        </div>
+
+        <video id="webcamFeed" autoplay playsinline></video>
+
+        <div id="messageBox" class="message-box"></div>
+
+        <div id="specsSection" class="specs-section mt-8 pt-6 border-t border-gray-200">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">Webcam Information</h2>
+            <div id="activeSettings" class="info-box">
+                <h3 class="text-xl font-medium text-gray-600 mb-2">Active Stream Settings:</h3>
+                <p>Status: <span id="settingsStatus" class="font-normal text-gray-500">Not active</span></p>
+                <ul>
+                    <li>Resolution: <span id="activeResolution">N/A</span></li>
+                    <li>Frame Rate: <span id="activeFrameRate">N/A</span></li>
+                    <li>Aspect Ratio: <span id="activeAspectRatio">N/A</span></li>
+                    <li>Facing Mode: <span id="activeFacingMode">N/A</span></li>
+                </ul>
+            </div>
+            <div id="capabilitiesList" class="info-box mt-4">
+                <h3 class="text-xl font-medium text-gray-600 mb-2">Device Capabilities:</h3>
+                <p class="text-sm text-gray-500 mb-2">
+                    (Shows what the selected webcam *can* support, not necessarily what's currently active.)
+                </p>
+                <ul>
+                    <li>Supported Resolutions (Width x Height): <span id="capResolutions">N/A</span></li>
+                    <li>Supported Frame Rates (FPS): <span id="capFrameRates">N/A</span></li>
+                    <li>Supported Aspect Ratios: <span id="capAspectRatios">N/A</span></li>
+                    <li>Supported Facing Modes: <span id="capFacingModes">N/A</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
