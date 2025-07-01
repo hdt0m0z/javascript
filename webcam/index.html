@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Access with FPS</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+        <h1 class="text-2xl md:text-3xl font-bold text-center mb-4">Webcam Viewer</h1>
+        <p class="text-center text-gray-600 dark:text-gray-400 mb-6">Click "Start Webcam" to begin streaming from your camera. You will be asked for permission.</p>
+
+        <!-- Video element to display the webcam stream -->
+        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden shadow-inner mb-6 aspect-video relative">
+            <video id="webcam" class="w-full h-full" autoplay playsinline></video>
+            <!-- FPS Display Overlay -->
+            <div class="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                FPS: <span id="fpsDisplay">0</span>
+            </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="flex justify-center space-x-4">
+            <button id="startButton" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition-transform transform hover:scale-105">
+                Start Webcam
+            </button>
+            <button id="stopButton" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75 transition-transform transform hover:scale-105" disabled>
+                Stop Webcam
+            </button>
+        </div>
+        
+        <!-- Status/Error Message Area -->
+        <p id="status" class="text-center text-sm text-red-500 mt-4 h-5"></p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
